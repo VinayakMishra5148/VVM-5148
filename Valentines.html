@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Proposal</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a001a;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: #ff80bf;
+        }
+        .container {
+            background: #330033;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px #ff0080;
+        }
+        h1 {
+            color: #ff1a75;
+            text-shadow: 0px 0px 10px #ff4d94;
+        }
+        p {
+            font-size: 18px;
+            color: #ff80bf;
+        }
+        .heart {
+            font-size: 50px;
+            color: #ff1a75;
+            animation: heartbeat 1s infinite alternate;
+            text-shadow: 0px 0px 10px #ff4d94;
+        }
+        @keyframes heartbeat {
+            from { transform: scale(1); }
+            to { transform: scale(1.2); }
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .yes {
+            background-color: #ff1a75;
+            color: white;
+            box-shadow: 0px 0px 15px #ff4d94;
+        }
+        .no {
+            background-color: #660033;
+            color: white;
+            position: absolute;
+            box-shadow: 0px 0px 15px #99004d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hey Vanshiii !!! Will you be mine forever?(PLEASE DON'T REFUSE...) 💕</h1>
+        <p>I know this might be the worst time to reach out to you, your exams are coming up, mine can happen anytime soon.Still, this time it is much more difficult than those 2 months. Sach me , tum saath hoti to life bht acchi ho jati hai. I know you do not feel like the same anymore par uk what, trust me one last time, and I promise everything thing me much better , even better than what was the best according to you.... Click yes and see what I have for you  💖</p>
+        <span class="heart">❤️</span>
+        <div class="buttons">
+            <a href="C:\Users\vinay\Desktop\CSE\Hackathon\Prop\album.html" class="btn yes">Yes 💞</a>
+            <button class="btn no">No 😢</button>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $(".no").hover(function() {
+                var x = Math.random() * (window.innerWidth - 100);
+                var y = Math.random() * (window.innerHeight - 50);
+                $(this).css({top: y + 'px', left: x + 'px'});
+            });
+        });
+    </script>
+</body>
+</html>

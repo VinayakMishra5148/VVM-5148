@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Memories</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes glowPulse {
+            0% { text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493; }
+            50% { text-shadow: 0 0 20px #ff1493, 0 0 30px #ff69b4; }
+            100% { text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493; }
+        }
+
+        @keyframes floatingHearts {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+
+        @keyframes textReveal {
+            0% { opacity: 0; transform: translateY(20px); }
+            60% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 1; }
+        }
+
+        body {
+            text-align: center;
+            background: linear-gradient(45deg, #0d0d0d, #1a1a1a);
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: #ff69b4;
+            opacity: 0.6;
+            border-radius: 50%;
+            animation: floatingHearts 5s linear infinite;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ff69b4;
+            animation: glowPulse 1.5s infinite alternate;
+            margin-top: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+            overflow-x: auto; 
+            white-space: nowrap;
+        }
+
+        .gallery img {
+            height: 150px; 
+            width: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px pink;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 15px #ff1493, 0px 0px 25px #ff69b4;
+        }
+
+        .video-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        iframe {
+            width: 560px;
+            height: 315px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px pink;
+        }
+
+        .animated-text {
+            font-size: 2rem;
+            color: #ff69b4;
+            font-weight: bold;
+            margin-top: 30px;
+            animation: textReveal 3s ease-in-out;
+            white-space: nowrap;
+            letter-spacing: 2px;
+        }
+
+        .animated-text span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: textReveal 3s ease-in-out forwards;
+        }
+
+        .animated-text span:nth-child(1) { animation-delay: 0s; }
+        .animated-text span:nth-child(2) { animation-delay: 0.2s; }
+        .animated-text span:nth-child(3) { animation-delay: 0.4s; }
+        .animated-text span:nth-child(4) { animation-delay: 0.6s; }
+        .animated-text span:nth-child(5) { animation-delay: 0.8s; }
+        .animated-text span:nth-child(6) { animation-delay: 1s; }
+        .animated-text span:nth-child(7) { animation-delay: 1.2s; }
+        .animated-text span:nth-child(8) { animation-delay: 1.4s; }
+        .animated-text span:nth-child(9) { animation-delay: 1.6s; }
+    </style>
+</head>
+<body>
+    <h1>Let's create a full album, darling... 💖</h1>
+
+    <div class="gallery">
+        <img src="C:\Users\vinay\Desktop\CSE\Hackathon\Prop\images\WhatsApp Image 2025-02-24 at 23.03.05_ebe1bbdf.jpg" alt="Photo 1">
+        <img src="C:\Users\vinay\Desktop\CSE\Hackathon\Prop\images\WhatsApp Image 2025-02-24 at 23.03.05_fc2ee0b5.jpg" alt="Photo 2">
+        <img src="C:\Users\vinay\Desktop\CSE\Hackathon\Prop\images\WhatsApp Image 2025-02-24 at 23.03.49_82748930.jpg" alt="Photo 3">
+    </div>
+
+    <div class="video-container">
+        <iframe style="border-radius:12px" 
+            src="https://open.spotify.com/embed/track/5kqIPrATaCc2LqxVWzQGbk?utm_source=generator" 
+            width="100%" height="152" frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+        </iframe>
+    </div>
+
+    <div class="animated-text">
+        <span>I</span><span> have</span><span> convinced</span><span> everyone</span><span> here,</span><span> ab</span><span> bas</span><span> aap</span><span> han</span><span> krdo</span><br>
+        <span>and</span><span> then...</span><br>
+        <span>IT</span><span> ALL</span><span> RESTARTS</span><span> with</span><span> US</span><span> and</span><span> not</span><span> ME</span><span> &amp;</span><span> YOU</span>
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            document.body.appendChild(heart);
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+
+</body>
+</html>
